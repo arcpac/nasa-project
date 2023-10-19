@@ -16,7 +16,7 @@ function httpAddNewLaunch(req, res) {
     !launch.rocket ||
     !launch.target
   ) {
-    return res.status(400).json({ error: "Required fields." });
+    return res.status(400).json({ error: "Missing required fields." });
   }
   launch.launchDate = new Date(launch.launchDate);
   if (isNaN(launch.launchDate)) {
